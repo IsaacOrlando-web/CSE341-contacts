@@ -8,7 +8,7 @@ let database;
 async function initDb() {
     try {
         await client.connect();
-        database = client.db('users'); // Assuming the database name is 'users'
+        database = client.db('users');
         console.log("Connected to MongoDB");
     } catch (e) {
         console.error(e);
