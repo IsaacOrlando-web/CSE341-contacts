@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "cse341-contacts-9uuu.onrender.com",
-  "basePath": "/",
+  "basePath": "/users",
   "schemes": [
     "https",
     "http"
@@ -64,16 +64,6 @@
           },
           "500": {
             "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
           }
         }
       }

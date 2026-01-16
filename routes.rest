@@ -1,6 +1,9 @@
 //getting hello World
 GET http://localhost:3000/
 
+###Getting all users
+GET http://localhost:3000/users
+
 ###getting a single user by ID
 GET http://localhost:3000/users/6961b99fa652999528b38751
 
@@ -17,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Update with put
-PUT http://localhost:3000/users/6968ca71f065a61aceb63d5f HTTP/1.1
+PUT http://localhost:3000/users/696a189d70dd568f4905b7c4 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -29,4 +32,4 @@ Content-Type: application/json
 }
 
 ### Delete user by ID
-DELETE http://localhost:3000/users/6968ca71f065a61aceb63d5f
+DELETE http://localhost:3000/users/696a189d70dd568f4905b7c4

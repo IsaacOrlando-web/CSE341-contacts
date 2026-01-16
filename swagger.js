@@ -6,11 +6,12 @@ const doc = {
         description: 'Users API for CSE341-contacts',
     },
     host: 'cse341-contacts-9uuu.onrender.com',
+    basePath: '/users',
     schemes: ['https', 'http'],
 };
 
 const outputFile = './swagger.json';
-const routes = ['./routes/index.js', './routes/users.js'];
+const routes = ['./routes/users.js'];
 
 
 swaggerAutogen(outputFile, routes, doc);
