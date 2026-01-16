@@ -10,7 +10,6 @@ const port = 3000;
 const router = require('./routes/index');
 const userRouter = require('./routes/users');
 
-app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -23,6 +22,8 @@ app.use((req, res, next) => {
     );
     next();
 });
+
+app.use(bodyParser.json());
 
 app.use('/', router);
 app.use('/users', userRouter);
