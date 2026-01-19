@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllUsers = async (req, res, next) => {
     //#swagger.tags=['Users']
-    const result = await mongodb.getDatabase().collection('users').find();
+    const result = await mongodb.getDatabase().collection('contacts').find();
     console.log(result);
     result.toArray().then(users => {
         res.setHeader('Content-Type', 'application/json');
@@ -15,7 +15,7 @@ const getAllUsers = async (req, res, next) => {
 const getSingle = async (req, res, next) => {
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
-    const result = await mongodb.getDatabase().collection('users').find({ _id: userId });
+    const result = await mongodb.getDatabase().collection('contacts').find({ _id: userId });
     result.toArray().then(users => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(users[0]);
@@ -64,7 +64,7 @@ const updateUser = async (req, res, next) => {
 const deleteUser = async (req, res, next) => {
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDatabase().collection('users').deleteOne({ _id: userId });
+    const response = await mongodb.getDatabase().collection('contacts').deleteOne({ _id: userId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {
