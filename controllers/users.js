@@ -32,7 +32,7 @@ const createUser = async (req, res, next) => {
         birthday: req.body.birthday
     };
 
-    const response = await mongodb.getDatabase().collection('users').insertOne(user);
+    const response = await mongodb.getDatabase().collection('contacts').insertOne(user);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
@@ -52,7 +52,7 @@ const updateUser = async (req, res, next) => {
     };
     const response = await mongodb
         .getDatabase()
-        .collection('users')
+        .collection('contacts')
         .replaceOne({ _id: userId }, user);
     if (response.modifiedCount > 0) {
         res.status(204).send();
