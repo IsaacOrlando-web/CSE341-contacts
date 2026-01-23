@@ -1,6 +1,7 @@
 const { create } = require('domain');
 const mongodb = require('../db/database');
 const ObjectId = require('mongodb').ObjectId;
+const { check, validationResult } = require('express-validator');
 
 const getAllUsers = async (req, res, next) => {
     //#swagger.tags=['Users']
